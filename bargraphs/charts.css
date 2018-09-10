@@ -28,26 +28,4 @@ ul {
   right: -40px;
   line-height: 25px;
 }
-.bargraph .top {
-  background: #7ecd27;
-  width: 12%;
-}
-.bargraph .midtop {
-  background: #7ecd27;
-  width: 35%;
-}
-.bargraph .neutral {
-  width: 40%;
-  background: #64cdf4;
-}
-.bargraph .midbottom {
-  width: 35%;
-  background: #edb2d6;
-}
-.bargraph .bottom {
-  width: 22%;
-  background: #edb2d6;
-}
-#data{
 
-}
