@@ -1,13 +1,37 @@
 {
-  "name": "Top Level",
+  "name": "parent",
   "children": [
-    { 
-      "name": "Level 2: A",
+    {
+      "name": "child 1",
+      "children": [{ "name": "grad-child 1-1" }, { "name": "grad-child 1 - 2" }]
+    },
+    {
+      "name": "child 1",
+
       "children": [
-        { "name": "Son of A" },
-        { "name": "Daughter of A" }
+        {
+          "name": "grad-child 2-1",
+          "children": [
+            {
+              "name": "grad-child 2-1-1"
+            },
+            {
+              "name": "grad-child  2-2-2"
+            },
+            {
+              "name": "grad-child  2-3-3"
+            }
+          ]
+        }
       ]
     },
-    { "name": "Level 2: B" }
+    {
+      "name": "child 3",
+      "children": [
+        {
+          "name": "grad-child 3-1"
+        }
+      ]
+    }
   ]
 }

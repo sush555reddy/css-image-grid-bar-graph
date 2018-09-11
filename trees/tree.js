@@ -1,49 +1,18 @@
-var x = {
-  name: "parent",
-  children: [
-    {
-      name: "child 1",
-      children: [
-        {
-          name: "grad-child 1-1",
-        },
-        {
-          name: "grad-child 1 - 2"
-        }
-      ]
-    },
-    {
-      name: "child 2",
-      children: [
-        {
-          name: "grad-child 2-1",children: [
-            {
-              name: "grad-child 2-1-1"
-            },
-            {
-              name: "grad-child  2-2-2"
-            },
-            {
-              name: "grad-child  2-3-3"
-            }
-          ]
-        },
-        {
-          name: " grad-child 2-2"
-        }
-      ]
-    },
-    {
-      name: "child 3",
-      children: [
-        {
-          name: "grad-child 3-1"
-        }
-      ]
-    }
-  ]
-};
+var str;
+axios.get('http://127.0.0.1:5500/trees/data.json').then((data)=>{
+  console.log(data);
+  var x = data.data;
+  str = `<ul>
+  <li id="root">
+    <span class="label">${x.name}</span>`;
+  iterate(x.children);
+  str += '<li></ul>';
+  document.getElementById("tree").innerHTML=str;
+})
 
+
+
+//var x = JSON.parse()
 function getSpan(child) {
   str += `<li class="child"><span class="label">${child.name}</span>`;
   if (child.children) {
@@ -66,13 +35,5 @@ function iterate(children) {
   }
     str += '</ul>'
 }
-var str = `<ul>
-      <li id="root">
-        <span class="label">${x.name}</span>`;
 
-iterate(x.children);
-
-str += '<li></ul>';
-
-document.getElementById("tree").innerHTML=str;
 
